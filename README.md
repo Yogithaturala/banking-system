@@ -4,8 +4,7 @@
 
 ### Full-Stack Banking Management System using Spring Boot, Thymeleaf & MySQL
 
-## 🌐Live Demo
-
+## 🌐 Live Demo
 👉 Try the application here:  
 https://banking-system-q5pp.onrender.com/login
 
