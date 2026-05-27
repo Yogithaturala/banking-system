@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Panel</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            margin-top: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background: #333;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div th:replace="fragments/navbar :: navbar"></div>
+
+<div class="container">
+
+    <h2>All Users</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Balance</th>
+        </tr>
+
+        <tr th:each="u : ${users}">
+            <td th:text="${u.id}"></td>
+            <td th:text="${u.name}"></td>
+            <td th:text="${u.balance}"></td>
+        </tr>
+    </table>
+
+    <h2>All Transactions</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Amount</th>
+            <th>Time</th>
+        </tr>
+
+        <tr th:each="t : ${transactions}">
+            <td th:text="${t.id}"></td>
+            <td th:text="${t.fromAccount}"></td>
+            <td th:text="${t.toAccount}"></td>
+            <td th:text="${t.amount}"></td>
+            <td th:text="${t.timestamp}"></td>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+</html>

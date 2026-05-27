@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Dashboard</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            min-height: 100vh;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background: #1e88e5;
+            padding: 15px 30px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .navbar .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #ffe082;
+        }
+
+        /* MAIN CONTAINER */
+
+        .container {
+            max-width: 850px;
+            margin: 40px auto;
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .welcome {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 18px;
+            color: #444;
+        }
+
+        /* QUICK LINKS */
+
+        .links {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .links a {
+            margin: 0 12px;
+            color: #1e88e5;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .links a:hover {
+            color: #1565c0;
+        }
+
+        /* CARDS */
+
+        .card {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+        }
+
+        .card h2 {
+            margin-bottom: 18px;
+            color: #333;
+        }
+
+        /* INPUTS */
+
+        input {
+            width: 100%;
+            padding: 13px;
+            margin-top: 12px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #1e88e5;
+            box-shadow: 0 0 8px rgba(30,136,229,0.5);
+        }
+
+        /* BUTTON */
+
+        button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 18px;
+            background: #43a047;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #2e7d32;
+            transform: scale(1.02);
+        }
+
+        /* ERROR */
+
+        .error {
+            color: red;
+            margin-top: 12px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+    <div class="logo">
+        🏦 Banking System
+    </div>
+
+    <div>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/transfer">Transfer</a>
+        <a href="/history">History</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="container">
+
+    <h1>Welcome to Your Dashboard 💰</h1>
+
+    <div class="welcome">
+        Manage your banking operations securely and easily.
+    </div>
+
+    <!-- QUICK LINKS -->
+
+    <div class="links">
+        <a href="/transfer">💸 Transfer Money</a>
+        <a href="/history">📜 Transaction History</a>
+    </div>
+
+    <!-- DEPOSIT SECTION -->
+
+    <div class="card">
+
+        <h2>Deposit Money</h2>
+
+        <form action="/deposit" method="post">
+
+            <input type="number"
+                   name="accountId"
+                   placeholder="Enter Account ID"
+                   required>
+
+            <input type="number"
+                   step="0.01"
+                   name="amount"
+                   placeholder="Enter Amount"
+                   required>
+
+            <button type="submit">
+                Deposit Money
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- WITHDRAW SECTION -->
+
+    <div class="card">
+
+        <h2>Withdraw Money</h2>
+
+        <form action="/withdraw" method="post">
+
+            <input type="number"
+                   name="accountId"
+                   placeholder="Enter Account ID"
+                   required>
+
+            <input type="number"
+                   step="0.01"
+                   name="amount"
+                   placeholder="Enter Amount"
+                   required>
+
+            <input type="password"
+                   name="password"
+                   placeholder="Enter Your Password"
+                   required>
+
+            <button type="submit">
+                Withdraw Money
+            </button>
+
+        </form>
+
+        <!-- ERROR MESSAGE -->
+
+        <p class="error"
+           th:if="${withdrawError != null}"
+           th:text="${withdrawError}">
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>

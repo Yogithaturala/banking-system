@@ -1,0 +1,12 @@
+<div th:fragment="navbar">
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/transfer">Transfer</a>
+        <a href="/history">History</a>
+        <a href="/logout">Logout</a>
+
+        <span th:if="${session.user != null}">
+        Welcome <b th:text="${session.user.name}"></b>
+    </span>
+    </nav>
+</div>

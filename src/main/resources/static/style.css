@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #eef2f7;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Center container for forms */
+.container {
+    width: 380px;
+    margin: 80px auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+/* Inputs */
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #1e88e5;
+    box-shadow: 0 0 5px rgba(30,136,229,0.3);
+}
+
+/* Buttons */
+button {
+    width: 95%;
+    padding: 12px;
+    margin-top: 10px;
+    background: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background: #1565c0;
+}
+
+/* Links */
+a {
+    display: block;
+    margin: 8px;
+    color: #1e88e5;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Navbar spacing support */
+nav {
+    text-align: left;
+}
+
+/* Error messages */
+.error {
+    color: red;
+    font-size: 12px;
+    margin: 0;
+}
