@@ -144,16 +144,15 @@ mvn spring-boot:run
 
 ---
 
-# Application URLs
+## 📍 Application URLs
 
 | Page | URL |
 |------|-----|
-| Signup | `http://localhost:8080/signup` |
-| Login | `http://localhost:8080/login` |
-| Dashboard | `http://localhost:8080/dashboard` |
-| Transfer | `http://localhost:8080/transfer` |
-| History | `http://localhost:8080/history` |
-| Admin | `http://localhost:8080/admin` |
+| Login | https://banking-system-q5pp.onrender.com/login |
+| Dashboard | https://banking-system-q5pp.onrender.com/dashboard |
+| Transfer | https://banking-system-q5pp.onrender.com/transfer |
+| History | https://banking-system-q5pp.onrender.com/history |
+| Admin | https://banking-system-q5pp.onrender.com/admin |
 
 ---
 
